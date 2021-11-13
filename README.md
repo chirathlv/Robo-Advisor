@@ -1,5 +1,7 @@
 # Robo-Advisor
 
+(https://github.com/chirathlv/Robo-Advisor/blob/main/Icons/robo.jpg)
+
 Since machine learning and NLP are disrupting finance to improve customer experience, Amazon Lex based robo advisor that could be used by customers or potential new customers to get investment portfolio recommendations for retirement.
 
 Following main taks completed to accomplish that goal
