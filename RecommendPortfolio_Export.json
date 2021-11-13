@@ -1,0 +1,160 @@
+{
+  "metadata": {
+    "schemaVersion": "1.0",
+    "importType": "LEX",
+    "importFormat": "JSON"
+  },
+  "resource": {
+    "rejectionStatement": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "I will be pleased to assist you in the future."
+        }
+      ]
+    },
+    "name": "RecommendPortfolio",
+    "version": "1",
+    "fulfillmentActivity": {
+      "type": "ReturnIntent"
+    },
+    "sampleUtterances": [
+      "I want to save money for my retirement",
+      "I'm {age} and I would like to invest for my retirement",
+      "I'm {age} and I want to invest for my retirement",
+      "I want the best option to invest for my retirement",
+      "I'm worried about my retirement",
+      "I want to invest for my retirement",
+      "I would like to invest for my retirement",
+      "How can I get started my retirement investment plan?",
+      "Hope I am not too late to invest for my retirement"
+    ],
+    "slots": [
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.NUMBER",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "How old are you?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 2,
+        "name": "age"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.FirstName",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "Thank you for trusting me to help, could you please give me your name?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 1,
+        "name": "firstName"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "AMAZON.NUMBER",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "How much do you want to invest?"
+            }
+          ],
+          "maxAttempts": 2
+        },
+        "priority": 3,
+        "name": "investmentAmount"
+      },
+      {
+        "sampleUtterances": [],
+        "slotType": "riskLevel",
+        "slotTypeVersion": "1",
+        "obfuscationSetting": "NONE",
+        "slotConstraint": "Required",
+        "valueElicitationPrompt": {
+          "messages": [
+            {
+              "contentType": "PlainText",
+              "content": "What level of investment risk would you like to take?"
+            }
+          ],
+          "responseCard": "{\"version\":1,\"contentType\":\"application/vnd.amazonaws.card.generic\",\"genericAttachments\":[{\"imageUrl\":\"https://github.com/chirathlv/unit13-challenge/blob/main/RoboAdvisor/Icons/none.png?raw=true\",\"subTitle\":\"No risk at all\",\"title\":\"None\",\"buttons\":[{\"text\":\"None\",\"value\":\"None\"}]},{\"imageUrl\":\"https://github.com/chirathlv/unit13-challenge/blob/main/RoboAdvisor/Icons/low.png?raw=true\",\"subTitle\":\"Just a bit of risk\",\"title\":\"Very Low or Low\",\"buttons\":[{\"text\":\"Very Low\",\"value\":\"Very Low\"},{\"text\":\"Low\",\"value\":\"Low\"}]},{\"imageUrl\":\"https://github.com/chirathlv/unit13-challenge/blob/main/RoboAdvisor/Icons/medium.png?raw=true\",\"subTitle\":\"Let's start becoming wild\",\"title\":\"Medium\",\"buttons\":[{\"text\":\"Medium\",\"value\":\"Medium\"}]},{\"imageUrl\":\"https://github.com/chirathlv/unit13-challenge/blob/main/RoboAdvisor/Icons/high.png?raw=true\",\"subTitle\":\"I have no fear!\",\"title\":\"High or Very High\",\"buttons\":[{\"text\":\"High\",\"value\":\"High\"},{\"text\":\"Very High\",\"value\":\"Very High\"}]}]}",
+          "maxAttempts": 2
+        },
+        "priority": 4,
+        "name": "riskLevel"
+      }
+    ],
+    "confirmationPrompt": {
+      "messages": [
+        {
+          "contentType": "PlainText",
+          "content": "Would you like me to search for the best investment portfolio for you now?"
+        }
+      ],
+      "maxAttempts": 3
+    },
+    "slotTypes": [
+      {
+        "description": "riskLevel",
+        "name": "riskLevel",
+        "version": "1",
+        "enumerationValues": [
+          {
+            "value": "High",
+            "synonyms": [
+              "Maximum"
+            ]
+          },
+          {
+            "value": "Very Low",
+            "synonyms": [
+              "Very Low"
+            ]
+          },
+          {
+            "value": "Low",
+            "synonyms": [
+              "Minimal"
+            ]
+          },
+          {
+            "value": "Medium",
+            "synonyms": [
+              "Medium"
+            ]
+          },
+          {
+            "value": "Very High",
+            "synonyms": [
+              "Very High"
+            ]
+          },
+          {
+            "value": "None",
+            "synonyms": [
+              "None"
+            ]
+          }
+        ],
+        "valueSelectionStrategy": "TOP_RESOLUTION"
+      }
+    ]
+  }
+}
