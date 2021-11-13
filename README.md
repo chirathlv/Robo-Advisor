@@ -6,7 +6,9 @@ Since machine learning and NLP are disrupting finance to improve customer experi
 
 Following main taks completed to accomplish that goal
 
-> Initial Robo Advisor Configuration
+```diff
+> Initial Robo Advisor Configuration in blue
+```
 
 Defined an Amazon Lex bot with a single intent that establishes a conversation about the requirements to suggest an investment portfolio for retirement.
 
